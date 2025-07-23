@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Architecture & Training | LLM Roadmap</title>
+  <style>
+    body {
+      background-color: #0e0e2c;
+      color: #ffffff;
+      font-family: 'Fira Code', monospace;
+      padding: 2rem;
+    }
+    h1 {
+      color: #00ffd5;
+    }
+    h2 {
+      color: #66e0ff;
+      margin-top: 1.5rem;
+    }
+    ul {
+      margin-left: 1.5rem;
+      list-style-type: square;
+    }
+    a {
+      color: #00ffd5;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏗️ LLM Architecture & Training</h1>
+
+  <h2>⚙️ Model Architectures</h2>
+  <ul>
+    <li><strong>GPT:</strong> Decoder-only transformer, trained for text generation</li>
+    <li><strong>BERT:</strong> Encoder-only transformer, used for understanding tasks</li>
+    <li><strong>T5:</strong> Sequence-to-sequence model that reframes tasks as text-to-text</li>
+  </ul>
+
+  <h2>📦 Pretraining</h2>
+  <ul>
+    <li><strong>Self-supervised Learning:</strong> No labeled data required</li>
+    <li><strong>Objectives:</strong> Masked language modeling (MLM), next token prediction</li>
+    <li>Massive data requirements & training on supercomputers</li>
+  </ul>
+
+  <h2>🔁 Fine-Tuning & Transfer Learning</h2>
+  <ul>
+    <li>Adapt pretrained models to specific downstream tasks (e.g. QA, summarization)</li>
+    <li>Few-shot, one-shot, and zero-shot learning capabilities</li>
+    <li>Prompt engineering as a powerful interface method</li>
+  </ul>
+
+  <p><a href="ai-basics.html">⬅️ Back to Roadmap</a></p>
+</body>
+</html>
