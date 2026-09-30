@@ -1,48 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Elham Sadeghnezhad | Software Engineer · AI/ML · Computer Vision</title>
+    <title>Elham Sadeghnezhad</title>
 
-    <meta
-        name="description"
-        content="Elham Sadeghnezhad — Software Engineer with deep expertise in Artificial Intelligence, Machine Learning, Computer Vision, and database-driven systems."
-    >
+    <meta name="description"
+          content="Elham Sadeghnezhad - AI Researcher and Machine Learning Engineer">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600&display=swap"
+          rel="stylesheet">
 
     <style>
 
         :root {
-            --bg: #07090d;
-            --bg-soft: #0b0f15;
-
-            --card: rgba(16, 20, 28, 0.62);
-
-            --border: rgba(255, 255, 255, 0.075);
-
-            --text: #f4f6fa;
-            --muted: #9299a7;
-
-            --cyan: #75e8ff;
-            --blue: #7c96ff;
-            --purple: #b58cff;
+            --text: #333333;
+            --muted: #777777;
+            --light: #999999;
+            --border: #e5e5e5;
+            --accent: #2f6f9f;
+            --accent-hover: #245a82;
+            --background: #ffffff;
+            --sidebar: #f8f8f8;
 
             --max-width: 1180px;
         }
-
-
-        /* =====================================
-           RESET
-        ===================================== */
 
         * {
             margin: 0;
@@ -55,1355 +42,481 @@
         }
 
         body {
-            position: relative;
-
-            font-family: "Inter", sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 82% 4%,
-                    rgba(117, 232, 255, 0.055),
-                    transparent 27%
-                ),
-                radial-gradient(
-                    circle at 8% 38%,
-                    rgba(181, 140, 255, 0.035),
-                    transparent 29%
-                ),
-                radial-gradient(
-                    circle at 50% 100%,
-                    rgba(124, 150, 255, 0.025),
-                    transparent 32%
-                ),
-                var(--bg);
-
+            font-family: "Open Sans", sans-serif;
             color: var(--text);
-
+            background: var(--background);
             line-height: 1.7;
-
-            overflow-x: hidden;
         }
-
-
-        /*
-            Very subtle grain.
-            This keeps the background from feeling
-            completely flat without becoming visible noise.
-        */
-
-        body::before {
-            content: "";
-
-            position: fixed;
-            inset: 0;
-
-            pointer-events: none;
-
-            opacity: 0.035;
-
-            background-image:
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
-
-            z-index: 9999;
-        }
-
-
-        /*
-            Extremely subtle atmospheric light.
-        */
-
-        body::after {
-            content: "";
-
-            position: fixed;
-
-            width: 700px;
-            height: 700px;
-
-            top: -350px;
-            right: -300px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(117, 232, 255, 0.045),
-                    transparent 68%
-                );
-
-            filter: blur(50px);
-
-            pointer-events: none;
-
-            z-index: -1;
-        }
-
 
         a {
-            color: inherit;
+            color: var(--accent);
             text-decoration: none;
         }
 
-
-        .container {
-            width: min(
-                var(--max-width),
-                calc(100% - 48px)
-            );
-
-            margin: 0 auto;
-        }
-
-
-        /* =====================================
-           NAVIGATION
-        ===================================== */
-
-        nav {
-            position: fixed;
-
-            top: 0;
-            left: 0;
-            right: 0;
-
-            height: 76px;
-
-            display: flex;
-            align-items: center;
-
-            z-index: 1000;
-
-            background:
-                rgba(7, 9, 13, 0.70);
-
-            backdrop-filter: blur(20px);
-
-            border-bottom:
-                1px solid rgba(255,255,255,0.045);
-        }
-
-
-        .nav-inner {
-            width: min(
-                var(--max-width),
-                calc(100% - 48px)
-            );
-
-            margin: auto;
-
-            display: flex;
-
-            justify-content: space-between;
-            align-items: center;
-        }
-
-
-        .logo {
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 20px;
-            font-weight: 700;
-
-            letter-spacing: -0.05em;
-        }
-
-
-        .logo span {
-            color: var(--cyan);
-        }
-
-
-        .nav-links {
-            display: flex;
-
-            align-items: center;
-
-            gap: 30px;
-        }
-
-
-        .nav-links a {
-            color: var(--muted);
-
-            font-size: 12px;
-
-            transition:
-                color 0.25s ease;
-        }
-
-
-        .nav-links a:hover {
-            color: var(--text);
-        }
-
-
-        /* =====================================
-           HERO
-        ===================================== */
-
-        .hero {
-            position: relative;
-
-            min-height: 100vh;
-
-            display: flex;
-
-            align-items: center;
-
-            padding-top: 110px;
-
-            overflow: hidden;
-        }
-
-
-        /*
-            Soft Hero glow.
-            This replaces the previous orb.
-        */
-
-        .hero::before {
-            content: "";
-
-            position: absolute;
-
-            width: 850px;
-            height: 500px;
-
-            right: -300px;
-            top: 10%;
-
-            background:
-                radial-gradient(
-                    ellipse,
-                    rgba(117, 232, 255, 0.055),
-                    transparent 68%
-                );
-
-            filter: blur(50px);
-
-            pointer-events: none;
-        }
-
-
-        .hero-grid {
-            position: relative;
-
-            display: grid;
-
-            grid-template-columns: 1fr 0.55fr;
-
-            gap: 70px;
-
-            align-items: center;
-        }
-
-
-        .hero-content {
-            max-width: 760px;
-        }
-
-
-        .eyebrow {
-            display: flex;
-
-            align-items: center;
-
-            gap: 11px;
-
-            margin-bottom: 25px;
-
-            color: var(--cyan);
-
-            font-size: 11px;
-            font-weight: 600;
-
-            letter-spacing: 0.16em;
-
-            text-transform: uppercase;
-        }
-
-
-        .eyebrow::before {
-            content: "";
-
-            width: 25px;
-            height: 1px;
-
-            background:
-                rgba(117,232,255,0.75);
-        }
-
-
-        h1 {
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size:
-                clamp(52px, 7vw, 88px);
-
-            line-height: 0.96;
-
-            letter-spacing: -0.065em;
-
-            font-weight: 600;
-
-            margin-bottom: 25px;
-        }
-
-
-        .hero-title {
-            font-size:
-                clamp(18px, 2vw, 25px);
-
-            color: #dce2eb;
-
-            font-weight: 500;
-
-            margin-bottom: 27px;
-        }
-
-
-        .hero-description {
-            max-width: 720px;
-
-            color: var(--muted);
-
-            font-size: 15px;
-
-            line-height: 1.95;
-
-            margin-bottom: 15px;
-        }
-
-
-        .hero-description strong {
-            color: #dce3ed;
-
-            font-weight: 500;
-        }
-
-
-        .hero-tags {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 9px;
-
-            margin-top: 30px;
-        }
-
-
-        .hero-tag {
-            padding: 7px 12px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.075);
-
-            border-radius: 999px;
-
-            color: #bfc7d4;
-
-            background:
-                rgba(255,255,255,0.018);
-
-            font-size: 11px;
-        }
-
-
-        /* =====================================
-           HERO SIDE STATEMENT
-        ===================================== */
-
-        .hero-side {
-            display: flex;
-
-            justify-content: flex-end;
-        }
-
-
-        .hero-statement {
-            position: relative;
-
-            max-width: 260px;
-
-            padding-left: 25px;
-
-            border-left:
-                1px solid
-                rgba(117,232,255,0.22);
-        }
-
-
-        .hero-statement-label {
-            color: #626b79;
-
-            font-size: 10px;
-
-            letter-spacing: 0.14em;
-
-            text-transform: uppercase;
-
-            margin-bottom: 15px;
-        }
-
-
-        .hero-statement p {
-            color: #b1b9c7;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 20px;
-
-            line-height: 1.5;
-
-            letter-spacing: -0.025em;
-        }
-
-
-        .hero-statement span {
-            color: var(--cyan);
-        }
-
-
-        /* =====================================
-           SECTIONS
-        ===================================== */
-
-        section {
-            position: relative;
-
-            padding: 120px 0;
-        }
-
-
-        section::before {
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-            right: 0;
-
-            height: 1px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255,255,255,0.06),
-                    transparent
-                );
-        }
-
-
-        .section-header {
-            display: flex;
-
-            justify-content: space-between;
-            align-items: end;
-
-            gap: 40px;
-
-            margin-bottom: 55px;
-        }
-
-
-        .section-number {
-            color: var(--cyan);
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 10px;
-
-            letter-spacing: 0.16em;
-        }
-
-
-        h2 {
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size:
-                clamp(34px, 4vw, 48px);
-
-            line-height: 1;
-
-            letter-spacing: -0.045em;
-
-            margin-top: 10px;
-        }
-
-
-        .section-intro {
-            max-width: 470px;
-
-            color: var(--muted);
-
-            font-size: 13px;
-
-            line-height: 1.8;
-        }
-
-
-        /* =====================================
-           ABOUT
-        ===================================== */
-
-        .about-grid {
-            display: grid;
-
-            grid-template-columns:
-                1.1fr 0.9fr;
-
-            gap: 80px;
-        }
-
-
-        .about-text {
-            color: #c0c7d2;
-
-            font-size: 16px;
-
-            line-height: 1.95;
-        }
-
-
-        .about-text p + p {
-            margin-top: 21px;
-        }
-
-
-        .about-text strong {
-            color: var(--text);
-
-            font-weight: 500;
-        }
-
-
-        .stats {
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 12px;
-        }
-
-
-        .stat {
-            padding: 27px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.065);
-
-            background:
-                rgba(255,255,255,0.018);
-
-            border-radius: 12px;
-        }
-
-
-        .stat-number {
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 34px;
-
-            letter-spacing: -0.04em;
-        }
-
-
-        .stat-label {
-            color: #747e8d;
-
-            font-size: 11px;
-
-            margin-top: 5px;
-        }
-
-
-        /* =====================================
-           EDUCATION
-        ===================================== */
-
-        .education-list {
-            display: grid;
-
-            gap: 12px;
-        }
-
-
-        .education-card {
-            display: grid;
-
-            grid-template-columns:
-                160px 1fr auto;
-
-            align-items: center;
-
-            gap: 30px;
-
-            padding: 31px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.065);
-
-            background:
-                rgba(255,255,255,0.017);
-
-            border-radius: 13px;
-
-            transition:
-                border-color 0.25s ease,
-                transform 0.25s ease;
-        }
-
-
-        .education-card:hover {
-            border-color:
-                rgba(117,232,255,0.18);
-
-            transform: translateY(-2px);
-        }
-
-
-        .education-degree {
-            color: var(--cyan);
-
-            font-size: 10px;
-            font-weight: 600;
-
-            letter-spacing: 0.13em;
-
-            text-transform: uppercase;
-        }
-
-
-        .education-card h3 {
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 20px;
-
-            letter-spacing: -0.025em;
-
-            margin-bottom: 5px;
-        }
-
-
-        .education-university {
-            color: #9da6b4;
-
-            font-size: 13px;
-        }
-
-
-        .education-date {
-            color: #697381;
-
-            font-size: 11px;
-        }
-
-
-        /* =====================================
-           THESIS
-        ===================================== */
-
-        .thesis {
-            position: relative;
-
-            margin-top: 18px;
-
-            padding: 42px;
-
-            border:
-                1px solid
-                rgba(117,232,255,0.12);
-
-            background:
-                linear-gradient(
-                    120deg,
-                    rgba(117,232,255,0.032),
-                    rgba(181,140,255,0.018)
-                );
-
-            border-radius: 15px;
-
-            overflow: hidden;
-        }
-
-
-        .thesis::after {
-            content: "";
-
-            position: absolute;
-
-            width: 400px;
-            height: 200px;
-
-            right: -200px;
-            bottom: -150px;
-
-            background:
-                radial-gradient(
-                    ellipse,
-                    rgba(117,232,255,0.06),
-                    transparent 70%
-                );
-
-            filter: blur(30px);
-        }
-
-
-        .thesis-label {
-            position: relative;
-            z-index: 1;
-
-            color: var(--cyan);
-
-            font-size: 10px;
-            font-weight: 600;
-
-            letter-spacing: 0.15em;
-
-            text-transform: uppercase;
-
-            margin-bottom: 15px;
-        }
-
-
-        .thesis h3 {
-            position: relative;
-            z-index: 1;
-
-            max-width: 850px;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size:
-                clamp(22px, 3vw, 30px);
-
-            line-height: 1.3;
-
-            letter-spacing: -0.035em;
-
-            margin-bottom: 20px;
-        }
-
-
-        .thesis p {
-            position: relative;
-            z-index: 1;
-
-            max-width: 820px;
-
-            color: var(--muted);
-
-            font-size: 14px;
-
-            line-height: 1.85;
-        }
-
-
-        .thesis-meta {
-            position: relative;
-            z-index: 1;
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 8px;
-
-            margin-top: 24px;
-        }
-
-
-        .meta {
-            padding: 6px 10px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.065);
-
-            border-radius: 999px;
-
-            color: #aab3c0;
-
-            font-size: 10px;
-        }
-
-
-        /* =====================================
-           RESEARCH
-        ===================================== */
-
-        .research-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 12px;
-        }
-
-
-        .research-card {
-            min-height: 215px;
-
-            padding: 31px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.065);
-
-            background:
-                rgba(255,255,255,0.017);
-
-            border-radius: 13px;
-
-            transition:
-                border-color 0.25s ease,
-                transform 0.25s ease;
-        }
-
-
-        .research-card:hover {
-            border-color:
-                rgba(117,232,255,0.18);
-
-            transform: translateY(-3px);
-        }
-
-
-        .research-index {
-            color: #687483;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 11px;
-        }
-
-
-        .research-card h3 {
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 22px;
-
-            letter-spacing: -0.025em;
-
-            margin: 28px 0 11px;
-        }
-
-
-        .research-card p {
-            color: var(--muted);
-
-            font-size: 13px;
-
-            line-height: 1.8;
-        }
-
-
-        /* =====================================
-           PUBLICATIONS
-        ===================================== */
-
-        .publication-list {
-            display: grid;
-
-            gap: 10px;
-        }
-
-
-        .publication {
-            display: grid;
-
-            grid-template-columns:
-                50px 1fr auto;
-
-            gap: 22px;
-
-            padding: 29px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.065);
-
-            background:
-                rgba(255,255,255,0.017);
-
-            border-radius: 13px;
-
-            transition:
-                border-color 0.25s ease;
-        }
-
-
-        .publication:hover {
-            border-color:
-                rgba(117,232,255,0.18);
-        }
-
-
-        .publication-number {
-            color: #687483;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 12px;
-        }
-
-
-        .publication h3 {
-            max-width: 850px;
-
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 18px;
-
-            line-height: 1.45;
-
-            letter-spacing: -0.015em;
-
-            margin-bottom: 9px;
-        }
-
-
-        .authors {
-            color: #b4bdca;
-
-            font-size: 12px;
-
-            margin-bottom: 5px;
-        }
-
-
-        .publication-status {
-            color: #707a89;
-
-            font-size: 11px;
-        }
-
-
-        .publication-link {
-            align-self: center;
-
-            color: var(--cyan);
-
-            font-size: 11px;
-
-            white-space: nowrap;
-        }
-
-
-        .publication-link:hover {
+        a:hover {
+            color: var(--accent-hover);
             text-decoration: underline;
         }
 
+        /* =========================
+           NAVIGATION
+        ========================= */
 
-        /* =====================================
-           EXPERIENCE
-        ===================================== */
-
-        .experience-list {
-            display: grid;
+        .topbar {
+            border-bottom: 1px solid var(--border);
+            background: #ffffff;
         }
 
+        .nav {
+            max-width: var(--max-width);
+            margin: auto;
 
-        .experience {
-            display: grid;
+            min-height: 70px;
 
-            grid-template-columns:
-                210px 1fr;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-            gap: 35px;
-
-            padding: 32px 0;
-
-            border-top:
-                1px solid
-                rgba(255,255,255,0.065);
+            padding: 0 30px;
         }
 
-
-        .experience-company {
-            font-family: "Space Grotesk", sans-serif;
-
-            font-size: 17px;
-        }
-
-
-        .experience-date {
-            color: #697381;
-
-            font-size: 11px;
-
-            margin-top: 5px;
-        }
-
-
-        .experience h3 {
-            font-size: 17px;
-
+        .site-title {
+            font-family: "Roboto Slab", serif;
+            font-size: 21px;
             font-weight: 500;
+            color: #222;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #555;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* =========================
+           MAIN LAYOUT
+        ========================= */
+
+        .page {
+            max-width: var(--max-width);
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 260px 1fr;
+
+            gap: 70px;
+
+            padding: 55px 30px 80px;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            position: sticky;
+            top: 30px;
+            align-self: start;
+        }
+
+        .profile-image {
+            width: 175px;
+            height: 175px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            background: #eeeeee;
+
+            margin-bottom: 25px;
+        }
+
+        .profile-name {
+            font-family: "Roboto Slab", serif;
+
+            font-size: 25px;
+            line-height: 1.3;
+
+            color: #222;
+
+            margin-bottom: 7px;
+        }
+
+        .profile-role {
+            color: var(--muted);
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+        }
+
+        .sidebar-info {
+            border-top: 1px solid var(--border);
+
+            padding-top: 18px;
+
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 8px;
 
             margin-bottom: 9px;
         }
 
-
-        .experience p {
-            max-width: 850px;
-
-            color: var(--muted);
-
-            font-size: 13px;
-
-            line-height: 1.85;
+        .info-label {
+            color: #555;
+            font-weight: 600;
         }
 
+        .social-links {
+            margin-top: 25px;
 
-        .stack {
             display: flex;
+            flex-direction: column;
 
-            flex-wrap: wrap;
-
-            gap: 6px;
-
-            margin-top: 17px;
+            gap: 8px;
         }
 
-
-        .stack span {
-            padding: 4px 7px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.055);
-
-            border-radius: 4px;
-
-            color: #818b9a;
-
-            font-size: 9px;
+        .social-links a {
+            font-size: 13px;
         }
 
+        /* =========================
+           CONTENT
+        ========================= */
 
-        /* =====================================
-           SKILLS
-        ===================================== */
-
-        .skills-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 11px;
+        .content {
+            min-width: 0;
         }
 
-
-        .skill-group {
-            padding: 25px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.065);
-
-            background:
-                rgba(255,255,255,0.017);
-
-            border-radius: 12px;
+        .section {
+            margin-bottom: 60px;
         }
 
+        .section h1 {
+            font-family: "Roboto Slab", serif;
 
-        .skill-group h3 {
-            font-family: "Space Grotesk", sans-serif;
+            font-size: 30px;
+            font-weight: 500;
 
+            color: #222;
+
+            margin-bottom: 18px;
+
+            padding-bottom: 10px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section h2 {
+            font-family: "Roboto Slab", serif;
+
+            font-size: 22px;
+            font-weight: 500;
+
+            color: #333;
+
+            margin-top: 32px;
+            margin-bottom: 8px;
+        }
+
+        .section p {
+            color: #555;
             font-size: 15px;
 
             margin-bottom: 15px;
         }
 
+        /* =========================
+           RESEARCH INTERESTS
+        ========================= */
 
-        .skill-group ul {
-            list-style: none;
+        .research-list {
+            margin-top: 20px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 10px 35px;
         }
 
+        .research-list div {
+            font-size: 14px;
+            color: #555;
 
-        .skill-group li {
-            color: #858f9e;
+            padding: 7px 0;
 
-            font-size: 12px;
-
-            padding: 5px 0;
+            border-bottom: 1px solid #eeeeee;
         }
 
+        /* =========================
+           HIGHLIGHTS
+        ========================= */
 
-        /* =====================================
-           CONTACT
-        ===================================== */
+        .highlight {
+            padding: 14px 0;
 
-        .contact {
-            padding-bottom: 85px;
-        }
-
-
-        .contact-box {
-            position: relative;
-
-            overflow: hidden;
-
-            padding: 65px;
-
-            border:
-                1px solid
-                rgba(117,232,255,0.11);
-
-            background:
-                linear-gradient(
-                    120deg,
-                    rgba(117,232,255,0.025),
-                    rgba(181,140,255,0.015)
-                );
-
-            border-radius: 15px;
-        }
-
-
-        .contact-box::after {
-            content: "";
-
-            position: absolute;
-
-            width: 500px;
-            height: 250px;
-
-            right: -250px;
-            top: -150px;
-
-            background:
-                radial-gradient(
-                    ellipse,
-                    rgba(117,232,255,0.065),
-                    transparent 70%
-                );
-
-            filter: blur(30px);
-        }
-
-
-        .contact-box h2 {
-            position: relative;
-            z-index: 1;
-
-            max-width: 700px;
-
-            margin-bottom: 18px;
-        }
-
-
-        .contact-box p {
-            position: relative;
-            z-index: 1;
-
-            max-width: 650px;
-
-            color: var(--muted);
+            border-bottom: 1px solid var(--border);
 
             font-size: 14px;
+            color: #555;
+        }
 
+        .highlight:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        /* =========================
+           PUBLICATIONS
+        ========================= */
+
+        .publication {
             margin-bottom: 28px;
         }
 
+        .publication-title {
+            font-family: "Roboto Slab", serif;
 
-        .contact-links {
-            position: relative;
-            z-index: 1;
+            font-size: 18px;
 
-            display: flex;
+            color: #333;
 
-            flex-wrap: wrap;
+            line-height: 1.5;
 
-            gap: 9px;
+            margin-bottom: 5px;
         }
 
+        .publication-authors {
+            font-size: 13px;
+            color: #777;
 
-        .contact-link {
-            padding: 10px 15px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.075);
-
-            border-radius: 7px;
-
-            color: #aeb7c5;
-
-            font-size: 11px;
-
-            transition:
-                border-color 0.25s ease,
-                color 0.25s ease;
+            margin-bottom: 6px;
         }
 
+        .publication-venue {
+            font-size: 13px;
+            color: #666;
 
-        .contact-link:hover {
-            border-color: var(--cyan);
+            font-style: italic;
 
-            color: var(--cyan);
+            margin-bottom: 6px;
         }
 
+        .publication-links {
+            font-size: 13px;
+        }
 
-        /* =====================================
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .timeline-item {
+            padding: 18px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-item:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .timeline-title {
+            font-family: "Roboto Slab", serif;
+
+            font-size: 18px;
+
+            color: #333;
+
+            margin-bottom: 3px;
+        }
+
+        .timeline-place {
+            color: var(--accent);
+
+            font-size: 14px;
+
+            margin-bottom: 4px;
+        }
+
+        .timeline-date {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .timeline-description {
+            margin-top: 8px;
+
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience {
+            padding: 18px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .experience-role {
+            font-family: "Roboto Slab", serif;
+
+            font-size: 18px;
+
+            color: #333;
+        }
+
+        .experience-company {
+            color: var(--accent);
+
+            font-size: 14px;
+        }
+
+        .experience-date {
+            color: #888;
+
+            font-size: 13px;
+
+            margin-top: 2px;
+        }
+
+        .experience p {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+
+            margin-top: 20px;
+        }
+
+        .skill-group h3 {
+            font-size: 14px;
+
+            color: #333;
+
+            margin-bottom: 5px;
+        }
+
+        .skill-group p {
+            font-size: 13px;
+
+            color: #777;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            background: var(--sidebar);
+
+            border: 1px solid var(--border);
+
+            padding: 25px;
+
+            margin-top: 20px;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+
+        /* =========================
            FOOTER
-        ===================================== */
+        ========================= */
 
         footer {
-            padding: 30px 0;
+            border-top: 1px solid var(--border);
 
-            border-top:
-                1px solid
-                rgba(255,255,255,0.045);
+            padding: 25px 30px;
 
-            color: #596270;
+            color: #999;
 
-            font-size: 10px;
+            font-size: 12px;
         }
 
-
-        footer .container {
-            display: flex;
-
-            justify-content: space-between;
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: auto;
         }
 
+        /* =========================
+           MOBILE
+        ========================= */
 
-        /* =====================================
-           RESPONSIVE
-        ===================================== */
+        @media (max-width: 850px) {
 
-        @media (max-width: 950px) {
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-side {
-                justify-content: flex-start;
-            }
-
-            .hero-statement {
-                max-width: 500px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .education-card {
-                grid-template-columns:
-                    120px 1fr;
-            }
-
-            .education-date {
-                grid-column: 2;
-            }
-
-        }
-
-
-        @media (max-width: 650px) {
-
-            .container,
-            .nav-inner {
-                width:
-                    calc(100% - 30px);
+            .nav {
+                padding: 0 20px;
             }
 
             .nav-links {
                 display: none;
             }
 
-            section {
-                padding: 80px 0;
+            .page {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+                padding: 40px 20px 60px;
             }
 
-            .hero {
-                padding-top: 105px;
+            .sidebar {
+                position: static;
+
+                text-align: center;
             }
 
-            .section-header {
-                display: block;
+            .profile-image {
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .section-intro {
-                margin-top: 20px;
+            .sidebar-info {
+                max-width: 350px;
+                margin: auto;
             }
 
-            .stats,
-            .research-grid,
-            .skills-grid {
+            .social-links {
+                align-items: center;
+            }
+
+            .research-list,
+            .skills {
                 grid-template-columns: 1fr;
             }
-
-            .education-card {
-                display: block;
-            }
-
-            .education-card h3 {
-                margin-top: 9px;
-            }
-
-            .education-date {
-                margin-top: 9px;
-            }
-
-            .thesis {
-                padding: 30px 24px;
-            }
-
-            .publication {
-                display: block;
-            }
-
-            .publication-number {
-                margin-bottom: 12px;
-            }
-
-            .publication-link {
-                display: inline-block;
-
-                margin-top: 15px;
-            }
-
-            .experience {
-                display: block;
-            }
-
-            .experience-company {
-                margin-bottom: 16px;
-            }
-
-            .contact-box {
-                padding: 38px 25px;
-            }
-
-            footer .container {
-                display: block;
-            }
-
-            footer span + span {
-                display: block;
-
-                margin-top: 8px;
-            }
-
         }
 
     </style>
@@ -1413,1146 +526,657 @@
 <body>
 
 
-<!-- ==========================================
-     NAVIGATION
-========================================== -->
+<!-- =========================
+     TOP NAVIGATION
+========================= -->
 
-<nav>
+<header class="topbar">
 
-    <div class="nav-inner">
+    <nav class="nav">
 
-        <a href="#" class="logo">
-            E<span>.</span>S
+        <a href="#about" class="site-title">
+            Elham Sadeghnezhad
         </a>
 
-        <div class="nav-links">
+        <ul class="nav-links">
 
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <li>
+                <a href="#about">About</a>
+            </li>
 
-        </div>
+            <li>
+                <a href="#research">Research</a>
+            </li>
 
-    </div>
+            <li>
+                <a href="#publications">Publications</a>
+            </li>
 
-</nav>
+            <li>
+                <a href="#education">Education</a>
+            </li>
 
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
 
-<!-- ==========================================
-     HERO
-========================================== -->
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
 
-<header class="hero">
+        </ul>
 
-    <div class="container hero-grid">
-
-
-        <div class="hero-content">
-
-            <div class="eyebrow">
-                Software Engineering · Artificial Intelligence
-            </div>
-
-
-            <h1>
-                Elham<br>
-                Sadeghnezhad
-            </h1>
-
-
-            <div class="hero-title">
-                Software Engineer · AI/ML · Computer Vision
-            </div>
-
-
-            <p class="hero-description">
-
-                I am a professional software engineer with nearly
-                <strong>8 years of experience</strong> building
-                enterprise-grade software systems, combined with
-                deep knowledge and hands-on experience in
-                Artificial Intelligence, Machine Learning, and
-                Computer Vision.
-
-            </p>
-
-
-            <p class="hero-description">
-
-                My expertise spans software engineering, AI/ML,
-                computer vision, and database-driven systems,
-                allowing me to bridge the gap between
-                <strong>
-                    AI research and real-world software development.
-                </strong>
-
-            </p>
-
-
-            <div class="hero-tags">
-
-                <span class="hero-tag">
-                    AI Projects
-                </span>
-
-                <span class="hero-tag">
-                    Research Collaboration
-                </span>
-
-                <span class="hero-tag">
-                    Software Engineering
-                </span>
-
-                <span class="hero-tag">
-                    Computer Vision
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-side">
-
-            <div class="hero-statement">
-
-                <div class="hero-statement-label">
-                    Focus
-                </div>
-
-                <p>
-                    Turning <span>AI knowledge</span>
-                    into practical software
-                    and intelligent systems.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+    </nav>
 
 </header>
 
 
-<main>
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="page">
 
 
-<!-- ==========================================
-     ABOUT
-========================================== -->
+    <!-- =========================
+         SIDEBAR
+    ========================= -->
 
-<section id="about">
+    <aside class="sidebar">
 
-    <div class="container">
+        <!--
+            Later replace this with your photo:
 
+            <img src="assets/profile.jpg"
+                 class="profile-image"
+                 alt="Elham Sadeghnezhad">
+        -->
 
-        <div class="section-header">
-
-            <div>
-
-                <div class="section-number">
-                    01 / ABOUT
-                </div>
-
-                <h2>
-                    What I Do
-                </h2>
-
-            </div>
+        <div class="profile-image"><img src="./profile.jpg"
+            class="profile-image"
+            alt="Elham Sadeghnezhad"></div>
 
 
-            <p class="section-intro">
+        <h1 class="profile-name">
+            Elham Sadeghnezhad
+        </h1>
 
-                Combining professional software engineering
-                experience with deep AI knowledge to build
-                practical and intelligent systems.
-
-            </p>
-
+        <div class="profile-role">
+            AI Researcher<br>
+            Machine Learning Engineer
         </div>
 
 
-        <div class="about-grid">
+        <div class="sidebar-info">
 
-
-            <div class="about-text">
-
-                <p>
-
-                    My professional background is rooted in
-                    <strong>software engineering</strong>,
-                    with extensive experience developing
-                    enterprise applications, backend systems,
-                    database-driven solutions, and distributed
-                    software architectures.
-
-                </p>
-
-
-                <p>
-
-                    Alongside my professional engineering career,
-                    I have developed a strong academic and practical
-                    background in
-                    <strong>
-                        Artificial Intelligence,
-                        Machine Learning,
-                        Deep Learning,
-                        and Computer Vision.
-                    </strong>
-
-                </p>
-
-
-                <p>
-
-                    I am particularly interested in applying
-                    AI to real-world problems and collaborating
-                    on projects where intelligent models need to
-                    become part of reliable, production-oriented
-                    software systems.
-
-                </p>
-
+            <div class="info-item">
+                <span class="info-label">Field:</span>
+                <span>Artificial Intelligence</span>
             </div>
 
-
-            <div class="stats">
-
-                <div class="stat">
-
-                    <div class="stat-number">
-                        8+
-                    </div>
-
-                    <div class="stat-label">
-                        Years of Software Engineering
-                    </div>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <div class="stat-number">
-                        AI
-                    </div>
-
-                    <div class="stat-label">
-                        Deep Learning & Machine Learning
-                    </div>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <div class="stat-number">
-                        CV
-                    </div>
-
-                    <div class="stat-label">
-                        Computer Vision
-                    </div>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <div class="stat-number">
-                        DB
-                    </div>
-
-                    <div class="stat-label">
-                        Database-Driven Systems
-                    </div>
-
-                </div>
-
+            <div class="info-item">
+                <span class="info-label">Focus:</span>
+                <span>Computer Vision</span>
             </div>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-     EDUCATION
-========================================== -->
-
-<section id="education">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div>
-
-                <div class="section-number">
-                    02 / EDUCATION
-                </div>
-
-                <h2>
-                    Academic Background
-                </h2>
-
+            <div class="info-item">
+                <span class="info-label">Location:</span>
+                <span>Iran, Tehran</span>
             </div>
 
-
-            <p class="section-intro">
-
-                My academic foundation in Computer Science and
-                Artificial Intelligence at K. N. Toosi University
-                of Technology.
-
-            </p>
-
-        </div>
-
-
-        <div class="education-list">
-
-
-            <div class="education-card">
-
-                <div class="education-degree">
-                    M.Sc.
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Computer Engineering —
-                        Artificial Intelligence
-                    </h3>
-
-                    <div class="education-university">
-                        K. N. Toosi University of Technology
-                    </div>
-
-                </div>
-
-
-                <div class="education-date">
-                    2017 — 2020
-                </div>
-
-            </div>
-
-
-            <div class="education-card">
-
-                <div class="education-degree">
-                    B.Sc.
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Computer Science
-                    </h3>
-
-                    <div class="education-university">
-                        K. N. Toosi University of Technology
-                    </div>
-
-                </div>
-
-
-                <div class="education-date">
-                    2010 — 2014
-                </div>
-
+            <div class="info-item">
+                <span class="info-label">Experience:</span>
+                <span>9+ years</span>
             </div>
 
         </div>
 
 
-        <!-- MASTER THESIS -->
+        <div class="social-links">
 
-        <div class="thesis">
+            <a href="mailto:elham.sadeghnezhad@gmail.com">
+                Email
+            </a>
 
-            <div class="thesis-label">
-                Master's Thesis
-            </div>
+            <a href="https://github.com/elsadeghnezhad"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://linkedin.com/in/e-sadeghnezhad"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <!-- Add Google Scholar URL -->
+            <a href="#publications">
+                Google Scholar
+            </a>
+
+            <!-- Add CV file -->
+            <a href="#">
+                Curriculum Vitae
+            </a>
+
+        </div>
+
+    </aside>
 
 
-            <h3>
-                Resting-State fMRI Data Classification
-                through Algorithmic Design and Implementation
-            </h3>
+    <!-- =========================
+         CONTENT
+    ========================= -->
 
+    <main class="content">
+
+
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section id="about" class="section">
+
+            <h1>
+                About me
+            </h1>
 
             <p>
-
-                Designed and implemented a deep convolutional
-                neural network for classification of brain
-                activity patterns using 4-D fMRI data from
-                the Human Connectome dataset.
-
+                I am an AI researcher and machine learning engineer
+                with a background in Computer Engineering and more
+                than eight years of professional software engineering
+                experience.
             </p>
 
-
-            <div class="thesis-meta">
-
-                <span class="meta">
-                    Human Connectome Dataset
-                </span>
-
-                <span class="meta">
-                    4-D fMRI
-                </span>
-
-                <span class="meta">
-                    Deep CNN
-                </span>
-
-                <span class="meta">
-                    PyTorch
-                </span>
-
-                <span class="meta">
-                    SimpleITK
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-     RESEARCH
-========================================== -->
-
-<section id="research">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div>
-
-                <div class="section-number">
-                    03 / RESEARCH
-                </div>
-
-                <h2>
-                    Research Interests
-                </h2>
-
-            </div>
-
-
-            <p class="section-intro">
-
-                Areas where I have developed academic knowledge,
-                implemented models, and continue to explore
-                research opportunities.
-
+            <p>
+                My research interests include Computer Vision,
+                Medical AI, Deep Learning, Multimodal Learning,
+                and Explainable AI. I am particularly interested
+                in developing intelligent systems that can learn
+                meaningful representations from complex visual
+                and multimodal data.
             </p>
 
-        </div>
-
-
-        <div class="research-grid">
-
-
-            <div class="research-card">
-
-                <div class="research-index">
-                    01
-                </div>
-
-                <h3>
-                    Computer Vision
-                </h3>
-
-                <p>
-                    Image classification, segmentation,
-                    object detection, visual understanding,
-                    and deep learning-based image analysis.
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <div class="research-index">
-                    02
-                </div>
-
-                <h3>
-                    Medical AI
-                </h3>
-
-                <p>
-                    Applying deep learning and computer vision
-                    techniques to medical image analysis and
-                    intelligent healthcare systems.
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <div class="research-index">
-                    03
-                </div>
-
-                <h3>
-                    Explainable AI
-                </h3>
-
-                <p>
-                    Exploring methods that make machine learning
-                    and deep learning models more interpretable
-                    and understandable.
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <div class="research-index">
-                    04
-                </div>
-
-                <h3>
-                    Deep Learning
-                </h3>
-
-                <p>
-                    Neural architectures, representation learning,
-                    model optimization, and practical deployment
-                    of deep learning systems.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-     PUBLICATIONS
-========================================== -->
-
-<section id="publications">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div>
-
-                <div class="section-number">
-                    04 / PUBLICATIONS
-                </div>
-
-                <h2>
-                    Research Work
-                </h2>
-
-            </div>
-
-
-            <p class="section-intro">
-
-                Selected research contributions and ongoing
-                manuscripts.
-
+            <p>
+                My software engineering background allows me to
+                bridge research and practical implementation,
+                from developing machine learning algorithms to
+                building production-oriented intelligent systems.
             </p>
-
-        </div>
-
-
-        <div class="publication-list">
-
-
-            <article class="publication">
-
-                <div class="publication-number">
-                    01
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        A Two-Phase Contrastive Ensemble Framework
-                        for ADHD Identification Using Audio, Facial,
-                        and Linguistic Features
-                    </h3>
-
-
-                    <div class="authors">
-                        Tayarani-N, M.-H., Sadeghnezhad, E.,
-                        & SaberiKamarposhti, M.
-                    </div>
-
-
-                    <div class="publication-status">
-                        Submitted to IEEE Transactions on Emerging
-                        Topics in Computational Intelligence.
-                    </div>
-
-                </div>
-
-
-                <div class="publication-link">
-                    Submitted
-                </div>
-
-            </article>
-
-
-            <article class="publication">
-
-                <div class="publication-number">
-                    02
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        InceptionCapsule: Inception-ResNet and
-                        CapsuleNet with Self-Attention for
-                        Medical Image Classification
-                    </h3>
-
-
-                    <div class="authors">
-                        Sadeghnezhad, E. & Salem, S.
-                    </div>
-
-
-                    <div class="publication-status">
-                        arXiv preprint arXiv:2402.02274, 2024.
-                    </div>
-
-                </div>
-
-
-                <a
-                    class="publication-link"
-                    href="https://arxiv.org/abs/2402.02274"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    View Paper ↗
-                </a>
-
-            </article>
-
-
-            <article class="publication">
-
-                <div class="publication-number">
-                    03
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Detecting Cognitive and Social Development
-                        Patterns in Lecture Transcripts Through
-                        Vygotskian Sociocultural Theory Using
-                        Machine Learning
-                    </h3>
-
-
-                    <div class="authors">
-                        Tayarani-N, M.-H., Sayehvand, Z.,
-                        & Sadeghnezhad, E.
-                    </div>
-
-
-                    <div class="publication-status">
-                        Manuscript in preparation.
-                    </div>
-
-                </div>
-
-
-                <div class="publication-link">
-                    In Preparation
-                </div>
-
-            </article>
-
-
-            <article class="publication">
-
-                <div class="publication-number">
-                    04
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Providing an Intelligent System to Suggest
-                        Corrective Exercises Based on Diagnosis of
-                        Skeletal Abnormalities Using Computer Vision
-                        Methods
-                    </h3>
-
-
-                    <div class="authors">
-                        Tayarani-N, M.-H. & Sadeghnezhad, E.
-                    </div>
-
-
-                    <div class="publication-status">
-                        Manuscript in preparation.
-                    </div>
-
-                </div>
-
-
-                <div class="publication-link">
-                    In Preparation
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-     EXPERIENCE
-========================================== -->
-
-<section id="experience">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div>
-
-                <div class="section-number">
-                    05 / EXPERIENCE
-                </div>
-
-                <h2>
-                    Professional Experience
-                </h2>
-
-            </div>
-
-
-            <p class="section-intro">
-
-                Nearly eight years of experience designing and
-                developing enterprise-grade software systems.
-
-            </p>
-
-        </div>
-
-
-        <div class="experience-list">
-
-
-            <article class="experience">
-
-                <div>
-
-                    <div class="experience-company">
-                        MAPNA Turbine
-                    </div>
-
-                    <div class="experience-date">
-                        May 2024 — Present
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Full Stack Software Engineer
-                    </h3>
-
-
-                    <p>
-
-                        Participated in designing and implementing
-                        enterprise applications for process
-                        management and automation using .NET Core,
-                        CQRS, and Mediator patterns. Worked on
-                        turbine data modeling and error probability
-                        estimation, as well as a Knowledge Management
-                        solution incorporating Retrieval-Augmented
-                        Generation (RAG).
-
-                    </p>
-
-
-                    <div class="stack">
-
-                        <span>.NET Core</span>
-                        <span>C#</span>
-                        <span>CQRS</span>
-                        <span>SQL Server</span>
-                        <span>React</span>
-                        <span>Python</span>
-                        <span>Keras</span>
-                        <span>RabbitMQ</span>
-                        <span>LangChain</span>
-                        <span>MongoDB</span>
-                        <span>Qdrant</span>
-                        <span>Docker</span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="experience">
-
-                <div>
-
-                    <div class="experience-company">
-                        Faradis Alborz
-                    </div>
-
-                    <div class="experience-date">
-                        July 2019 — February 2023
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Full Stack Developer
-                    </h3>
-
-
-                    <p>
-
-                        Developed payment systems for kiosks and
-                        ATMs, web-based monitoring systems for
-                        payment switches, transaction management
-                        solutions, and banking applications.
-                        Participated in refactoring legacy systems
-                        and migration toward microservice architecture.
-
-                    </p>
-
-
-                    <div class="stack">
-
-                        <span>.NET Core</span>
-                        <span>C#</span>
-                        <span>C++</span>
-                        <span>SQL Server</span>
-                        <span>JavaScript</span>
-                        <span>SSIS</span>
-                        <span>SSRS</span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="experience">
-
-                <div>
-
-                    <div class="experience-company">
-                        GamElectronic
-                    </div>
-
-                    <div class="experience-date">
-                        March 2016 — March 2018
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Full Stack Developer
-                    </h3>
-
-
-                    <p>
-
-                        Developed automated organizational
-                        solutions, financial reporting systems,
-                        and a Promotor Management System covering
-                        work logs, off-times, salaries, and benefits.
-
-                    </p>
-
-
-                    <div class="stack">
-
-                        <span>ASP.NET</span>
-                        <span>MVC</span>
-                        <span>ADO.NET</span>
-                        <span>LINQ</span>
-                        <span>SQL Server</span>
-                        <span>Telerik</span>
-                        <span>JavaScript</span>
-                        <span>jQuery</span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-     SKILLS
-========================================== -->
-
-<section id="skills">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div>
-
-                <div class="section-number">
-                    06 / SKILLS
-                </div>
-
-                <h2>
-                    Technical Expertise
-                </h2>
-
-            </div>
-
-
-            <p class="section-intro">
-
-                A combination of software engineering,
-                artificial intelligence, data, and enterprise
-                technology experience.
-
-            </p>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-
-            <div class="skill-group">
-
-                <h3>
-                    AI / Machine Learning
-                </h3>
-
-                <ul>
-                    <li>Deep Learning</li>
-                    <li>Machine Learning</li>
-                    <li>PyTorch</li>
-                    <li>TensorFlow</li>
-                    <li>Keras</li>
-                    <li>scikit-learn</li>
-                </ul>
-
-            </div>
-
-
-            <div class="skill-group">
-
-                <h3>
-                    Computer Vision
-                </h3>
-
-                <ul>
-                    <li>Image Classification</li>
-                    <li>Segmentation</li>
-                    <li>Object Detection</li>
-                    <li>OpenCV</li>
-                    <li>Medical Image Analysis</li>
-                </ul>
-
-            </div>
-
-
-            <div class="skill-group">
-
-                <h3>
-                    Software Engineering
-                </h3>
-
-                <ul>
-                    <li>C# / .NET</li>
-                    <li>ASP.NET Core</li>
-                    <li>C++</li>
-                    <li>Python</li>
-                    <li>CQRS / Mediator</li>
-                    <li>Microservices</li>
-                </ul>
-
-            </div>
-
-
-            <div class="skill-group">
-
-                <h3>
-                    Data & Databases
-                </h3>
-
-                <ul>
-                    <li>MS SQL Server</li>
-                    <li>MongoDB</li>
-                    <li>Qdrant</li>
-                    <li>SSIS</li>
-                    <li>SSRS</li>
-                    <li>Database Architecture</li>
-                </ul>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-     CONTACT
-========================================== -->
-
-<section id="contact" class="contact">
-
-    <div class="container">
-
-
-        <div class="contact-box">
-
-            <div class="section-number">
-                07 / CONTACT
-            </div>
 
 
             <h2>
-                Interested in building
-                something intelligent?
+                Research interests
             </h2>
 
+            <div class="research-list">
 
-            <p>
+                <div>
+                    Computer Vision
+                </div>
 
-                I am interested in real-world AI projects,
-                research collaboration, and software engineering
-                opportunities where Artificial Intelligence can
-                create practical value.
+                <div>
+                    Medical AI
+                </div>
 
-            </p>
+                <div>
+                    Deep Learning
+                </div>
 
+                <div>
+                    Multimodal Learning
+                </div>
 
-            <div class="contact-links">
+                <div>
+                    Explainable AI
+                </div>
 
-                <a
-                    class="contact-link"
-                    href="mailto:elham.sadeghnezhad@gmail.com"
-                >
-                    Email
-                </a>
+                <div>
+                    Medical Image Analysis
+                </div>
 
+                <div>
+                    Representation Learning
+                </div>
 
-                <a
-                    class="contact-link"
-                    href="https://github.com/elsadeghnezhad"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    GitHub ↗
-                </a>
-
-
-                <a
-                    class="contact-link"
-                    href="https://linkedin.com/in/e-sadeghnezhad"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    LinkedIn ↗
-                </a>
+                <div>
+                    Machine Learning
+                </div>
 
             </div>
 
-        </div>
-
-    </div>
-
-</section>
+        </section>
 
 
-</main>
+        <!-- =========================
+             HIGHLIGHTS
+        ========================= -->
+
+        <section class="section">
+
+            <h1>
+                Highlights
+            </h1>
+
+            <div class="highlight">
+
+                <strong>
+                    InceptionCapsule
+                </strong>
+
+                — research on combining Inception-ResNet,
+                Capsule Networks, and self-attention for
+                medical image classification.
+
+            </div>
 
 
-<!-- ==========================================
+            <div class="highlight">
+
+                <strong>
+                    Multimodal ADHD Identification
+                </strong>
+
+                — research combining audio, facial,
+                and linguistic features using contrastive
+                and ensemble learning.
+
+            </div>
+
+
+            <div class="highlight">
+
+                <strong>
+                    Medical Imaging
+                </strong>
+
+                — master's research involving 4-D brain
+                fMRI data and deep convolutional neural networks.
+
+            </div>
+
+
+            <div class="highlight">
+
+                <strong>
+                    Current Research
+                </strong>
+
+                — computer vision, multimodal AI,
+                explainable AI, and intelligent healthcare systems.
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PUBLICATIONS
+        ========================= -->
+
+        <section id="publications" class="section">
+
+            <h1>
+                Publications
+            </h1>
+
+
+            <div class="publication">
+
+                <div class="publication-title">
+                    InceptionCapsule: Inception-ResNet and CapsuleNet
+                    with Self-Attention for Medical Image Classification
+                </div>
+
+                <div class="publication-authors">
+                    Elham Sadeghnezhad
+                </div>
+
+                <div class="publication-venue">
+                    arXiv, 2024
+                </div>
+
+                <div class="publication-links">
+                    <a href="https://arxiv.org/abs/2402.02274"
+                       target="_blank">
+                        Paper
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="publication">
+
+                <div class="publication-title">
+                    A Two-Phase Contrastive Ensemble Framework for
+                    ADHD Identification Using Audio, Facial,
+                    and Linguistic Features
+                </div>
+
+                <div class="publication-authors">
+                    Tayarani-N., M.-H. · Elham Sadeghnezhad ·
+                    SaberiKamarposhti, M.
+                </div>
+
+                <div class="publication-venue">
+                    Submitted to IEEE Transactions on Emerging
+                    Topics in Computational Intelligence
+                </div>
+
+            </div>
+
+
+            <div class="publication">
+
+                <div class="publication-title">
+                    Detecting Cognitive and Social Development
+                    Patterns in Lecture Transcripts Through
+                    Vygotskian Sociocultural Theory Using Machine Learning
+                </div>
+
+                <div class="publication-authors">
+                    Manuscript in preparation
+                </div>
+
+            </div>
+
+
+            <div class="publication">
+
+                <div class="publication-title">
+                    Intelligent Exercise Recommendation Based on
+                    Skeletal Abnormality Diagnosis Using Computer Vision
+                </div>
+
+                <div class="publication-authors">
+                    Manuscript in preparation
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EDUCATION
+        ========================= -->
+
+        <section id="education" class="section">
+
+            <h1>
+                Education
+            </h1>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-title">
+                    M.Sc. in Computer Engineering —
+                    Artificial Intelligence
+                </div>
+
+                <div class="timeline-place">
+                    K. N. Toosi University of Technology
+                </div>
+
+                <div class="timeline-date">
+                    2017 – 2020
+                </div>
+
+                <div class="timeline-description">
+
+                    Thesis:
+                    <strong>
+                        Resting-State fMRI Data Classification
+                        through Algorithmic Design and Implementation
+                    </strong>
+
+                    <br><br>
+
+                    Research involving 4-D brain fMRI data,
+                    deep convolutional neural networks,
+                    PyTorch, and medical image processing.
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-title">
+                    B.Sc. in Computer Science
+                </div>
+
+                <div class="timeline-place">
+                    K. N. Toosi University of Technology
+                </div>
+
+                <div class="timeline-date">
+                    2010 – 2014
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EXPERIENCE
+        ========================= -->
+
+        <section id="experience" class="section">
+
+            <h1>
+                Professional Activity
+            </h1>
+
+
+            <div class="experience">
+
+                <div class="experience-role">
+                    Full Stack Software Engineer
+                </div>
+
+                <div class="experience-company">
+                    MAPNA Turbine
+                </div>
+
+                <div class="experience-date">
+                    May 2024 – Present
+                </div>
+
+                <p>
+                    Developing enterprise software and AI-enabled
+                    systems involving data processing, intelligent
+                    information retrieval, RAG-based systems,
+                    and backend architectures.
+                </p>
+
+            </div>
+
+
+            <div class="experience">
+
+                <div class="experience-role">
+                    Full Stack Developer
+                </div>
+
+                <div class="experience-company">
+                    Faradis Alborz
+                </div>
+
+                <div class="experience-date">
+                    July 2019 – February 2023
+                </div>
+
+                <p>
+                    Designed and implemented full-stack software
+                    applications and backend services.
+                </p>
+
+            </div>
+
+
+            <div class="experience">
+
+                <div class="experience-role">
+                    Full Stack Developer
+                </div>
+
+                <div class="experience-company">
+                    GamElectronic
+                </div>
+
+                <div class="experience-date">
+                    March 2016 – March 2018
+                </div>
+
+                <p>
+                    Developed software systems and web applications
+                    across frontend and backend technologies.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================= -->
+
+        <section class="section">
+
+            <h1>
+                Technical Skills
+            </h1>
+
+            <div class="skills">
+
+                <div class="skill-group">
+
+                    <h3>
+                        AI & Machine Learning
+                    </h3>
+
+                    <p>
+                        Python · PyTorch · TensorFlow · Keras ·
+                        Deep Learning · Machine Learning ·
+                        Representation Learning
+                    </p>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>
+                        Computer Vision
+                    </h3>
+
+                    <p>
+                        OpenCV · CNN · Medical Image Analysis ·
+                        Image Classification · Attention Mechanisms
+                    </p>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>
+                        Software Engineering
+                    </h3>
+
+                    <p>
+                        C# · .NET Core · ASP.NET Core ·
+                        CQRS · React · REST APIs · Docker
+                    </p>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>
+                        Data & AI Infrastructure
+                    </h3>
+
+                    <p>
+                        SQL Server · MongoDB · Qdrant ·
+                        LangChain · RAG · RabbitMQ
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section id="contact" class="section">
+
+            <h1>
+                Contact
+            </h1>
+
+            <p>
+                I am interested in research opportunities,
+                PhD positions, research collaborations, and
+                projects involving Artificial Intelligence,
+                Computer Vision, Medical AI, and Multimodal Learning.
+            </p>
+
+
+            <div class="contact-box">
+
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:elham.sadeghnezhad@gmail.com">
+                        elham.sadeghnezhad@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/elsadeghnezhad"
+                       target="_blank">
+                        github.com/elsadeghnezhad
+                    </a>
+                </p>
+
+                <p>
+                    <strong>LinkedIn:</strong>
+                    <a href="https://linkedin.com/in/e-sadeghnezhad"
+                       target="_blank">
+                        linkedin.com/in/e-sadeghnezhad
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================
      FOOTER
-========================================== -->
+========================= -->
 
 <footer>
 
-    <div class="container">
+    <div class="footer-inner">
 
-        <span>
-            © 2026 Elham Sadeghnezhad
-        </span>
-
-        <span>
-            Software Engineering · Artificial Intelligence
-        </span>
+        © 2026 Elham Sadeghnezhad
 
     </div>
 
@@ -2560,4 +1184,5 @@
 
 
 </body>
+
 </html>
